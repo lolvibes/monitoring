@@ -1,4 +1,4 @@
-package //main
+package main
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"github.com/prometheus/procfs"
 )
 
-//func main() {
+f//unc main() {
 	fs, err := procfs.NewFS("/proc")
 	if err != nil {
 		fmt.Print(err)
@@ -22,7 +22,13 @@ import (
 	fmt.Println("=== Aggregated System CPU Values (in seconds) ===")
 	fmt.Printf("User:       %.2f\n", cpu.User)
 	fmt.Printf("Nice:       %.2f\n", cpu.Nice)
-	fmt.Printf("System:     %.2f\n", cpu.System) fmt.Printf("Idle:       %.2f\n", cpu.Idle) fmt.Printf("Iowait:     %.2f\n", cpu.Iowait) fmt.Printf("IRQ:        %.2f\n", cpu.IRQ) fmt.Printf("SoftIRQ:    %.2f\n", cpu.SoftIRQ) fmt.Printf("Steal:      %.2f\n", cpu.Steal) fmt.Printf("Guest:      %.2f\n", cpu.Guest)
+	fmt.Printf("System:     %.2f\n", cpu.System)
+	fmt.Printf("Idle:       %.2f\n", cpu.Idle)
+	fmt.Printf("Iowait:     %.2f\n", cpu.Iowait)
+	fmt.Printf("IRQ:        %.2f\n", cpu.IRQ)
+	fmt.Printf("SoftIRQ:    %.2f\n", cpu.SoftIRQ)
+	fmt.Printf("Steal:      %.2f\n", cpu.Steal)
+	fmt.Printf("Guest:      %.2f\n", cpu.Guest)
 	fmt.Printf("GuestNice:  %.2f\n", cpu.GuestNice)
 	idletime := cpu.Idle + cpu.Iowait
 	workingtime := cpu.User + cpu.System + cpu.IRQ
